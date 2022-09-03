@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    @apply text-foreground ;
+}
+
+.screen-fit{
+    height: calc(100vh - 4rem);
+}
+
+.full-shadow{
+    box-shadow:0 0 0 100vw #000000aa;
+}
