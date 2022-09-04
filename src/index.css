@@ -6,6 +6,10 @@ body{
     @apply text-foreground ;
 }
 
+::selection{
+    background-color: hsl(234, 32%, 35%);
+}
+
 .screen-fit{
     height: calc(100vh - 4rem);
 }

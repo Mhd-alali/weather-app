@@ -28,9 +28,9 @@ export default function Aside({ showAside, toggleAside, refrense }) {
         </button>
 
         <div className="grid grid-cols-7 gap-2 text-sm w-full">
-          <input type="text" value={value} onChange={(arg) => {setValue(arg.target.value); }} placeholder="search Location" className="col-span-5 bg-primary-light border-slate-500 border-solid border-[1px] focus:border-slate-50 transition-all outline-none px-2"/>
+          <input type="text" value={value} onKeyDown={(eve)=>{}} onChange={(arg) => {setValue(arg.target.value); }} placeholder="search Location" className="col-span-5 bg-primary-light border-slate-500 border-solid border-[1px] focus:border-slate-50 transition-all outline-none px-2"/>
           <Btn onClick={handleClick} classes={"col-span-2 bg-blue-600 child:w-6 child:mx-auto"}>
-            {visible ? <Loading/> : "Search"}
+            {visible ?<div className="child:animate-spin"> <Loading/></div> : "Search"}
           </Btn>
         </div>
 

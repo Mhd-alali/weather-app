@@ -16,8 +16,7 @@ export async function getCities(query) {
     try {
         const response = await fetch(url)
         if (response.ok) {
-            const json = await response.json()
-            return json
+            return json = await response.json()
         } else {
             throw new Error("the request faild")
         }
@@ -37,8 +36,7 @@ export async function getCurrentCondition(cityId) {
     try {
         const response = await fetch(url)
         if (response.ok) {
-            const json = await response.json()
-            return json;
+            return json = await response.json()
         } else {
             throw new Error("the request faild")
         }
