@@ -2,9 +2,8 @@ import React, { createContext, useState } from "react";
 
 export const ConditionContext = createContext();
 
-export function ConditionProvider({ children }) {
-  const conditionState = useState({});
+export function ConditionProvider({ children,value }) {
   return (
-    <ConditionContext.Provider value={conditionState}>{children}</ConditionContext.Provider>
+    <ConditionContext.Provider value={value}>{children}</ConditionContext.Provider>
   );
 }

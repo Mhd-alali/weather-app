@@ -23,9 +23,7 @@ export default function Right({refrense}) {
         <ul className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-[1rem] justify-items-center text-sm first:justify-self-end">
           {condition.DailyForecasts && condition.DailyForecasts.map(condition => <WeekCard date={condition.Date} icon={condition.Day.Icon} dayTemp={condition.Temperature.Maximum} nightTemp={condition.Temperature.Minimum} key={condition.EpochDate}/>)}
         </ul>
-        <h2 className="text-2xl mr-auto font-bold">
-          Today's Highlights   <span className="text-sm child:w-5 font-normal child:inline child:-translate-y-[2px]">these are random fake data .·´¯`(&gt;▂&lt;)´¯`·.</span>
-        </h2>
+        <h2 className="text-2xl mr-auto font-bold">Today's Highlights</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-10">
           <HighLightCard title={'Wind Status'} value={{ value: "7", unit: "mph" }} />

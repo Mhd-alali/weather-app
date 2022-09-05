@@ -1,6 +1,8 @@
 import React from "react";
 import Flex from "../Container/flex";
 
+import { UnitStringFormatter } from "../api/accu-helper";
+
 export default function WeekCard({ icon, dayTemp, nightTemp, date }) {
     const datetime = new Date(date).toUTCString().slice(0,11);
     return (
@@ -10,8 +12,8 @@ export default function WeekCard({ icon, dayTemp, nightTemp, date }) {
                 <img src={`../src/assets/weather-icons/${icon}.svg`} alt="" />
             </div>
             <Flex classes={'gap-4'}>
-                <p>{dayTemp.Value}{dayTemp.Unit}</p>
-                <p className="text-slate-400">{nightTemp.Value}{nightTemp.Unit}</p>
+                <p>{dayTemp.Value}{UnitStringFormatter(dayTemp.Unit)}</p>
+                <p className="text-slate-400">{nightTemp.Value}{UnitStringFormatter(nightTemp.Unit)}</p>
             </Flex>
         </Flex>
     );

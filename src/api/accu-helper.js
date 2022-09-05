@@ -16,7 +16,8 @@ export async function getCities(query) {
     try {
         const response = await fetch(url)
         if (response.ok) {
-            return json = await response.json()
+            const json = await response.json()
+            return json
         } else {
             throw new Error("the request faild")
         }
@@ -33,14 +34,25 @@ export async function getCities(query) {
 export async function getCurrentCondition(cityId) {
     const url = new URL(Baseurl + forcastsEndPoint + cityId)
     url.searchParams.append("apikey", import.meta.env.VITE_API_KEY);
+    url.searchParams.append("details", true);
     try {
         const response = await fetch(url)
         if (response.ok) {
-            return json = await response.json()
+            const json = await response.json()
+            return json
         } else {
             throw new Error("the request faild")
         }
     } catch (error) {
         console.log(error);
     }
+}
+
+
+export function UnitStringFormatter(unit) {
+    return unit === "F" ? "℉" : "℃"
+}
+
+export function DateStringFormatter(date) {
+    return new Date(date).toUTCString().slice(0,11).replace(" ","");
 }
