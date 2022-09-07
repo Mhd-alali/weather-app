@@ -1,4 +1,4 @@
-const Baseurl = "http://dataservice.accuweather.com/";
+const Baseurl = "https://dataservice.accuweather.com/";
 
 const autoCompleteEndPoint = "locations/v1/cities/autocomplete";
 
