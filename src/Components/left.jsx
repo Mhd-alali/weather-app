@@ -4,9 +4,6 @@ import Btn from "./Btn";
 import BtnRounded from "./btn-rounded";
 import Flex from "../Container/flex";
 import Icon from "./icon";
-
-import { ReactComponent as Location } from "../assets/icons/Location.svg";
-import { ReactComponent as LocationPen } from "../assets/icons/Location-pen.svg";
 import { ConditionContext } from "../Context/city-condition-context";
 import { UnitStringFormatter ,DateStringFormatter} from "../api/accu-helper";
 
@@ -19,7 +16,7 @@ export default function Left({toggleAside,cityName}) {
     <div className="flex justify-between px-4 text-sm">
       <Btn onClick={() => toggleAside(true)}>Search for Places</Btn>
       <BtnRounded>
-        <Location />
+        <img src="./assets/icons/Location.svg" alt="" />
       </BtnRounded>
     </div>
     <Flex classes={"flex-col justify-around min-h-[80%]"}>
@@ -39,7 +36,7 @@ export default function Left({toggleAside,cityName}) {
     </Flex>
     <Flex classes={"flex-col text-slate-400 text-sm"}>
       <p><span className="mr-2">Today</span> • <span className="ml-2">{DateStringFormatter(Date)}</span></p>
-      <p className="child:w-5 child:inline mt-4"><LocationPen /> {cityName.current}</p>
+      <p className="child:w-5 child:inline mt-4"><img src="./assets/icons/Location-pen.svg" /> {cityName.current}</p>
     </Flex>
     </div>
   </section>;
